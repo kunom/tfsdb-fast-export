@@ -50,6 +50,7 @@ referred to as `<config>` below). Start with the `cfg-empty.py` template.
 the section headings in the typically large output.)
 
     `main.py <config> branches-info`
+    
     `main.py <config> branches-info > out.txt`
 
 4.  Test the user name rewrite / e-mail / timezone lookup hook.
@@ -62,12 +63,15 @@ also processes the file contents and does the Git marks handling and timezone ha
 like for the real export.
 
     `main.py <config> commits`
+    
     `main.py <config> commits --no-files`
+    
     `main.py <config> fast-export --dry-run`
 
 6.  Run the conversion.
 
     `git init d:\new-repo --bare`
+    
     `set git_dir=d:\new-repo`
 
     `main.py <config> fast-export --export-warnings=warnings.txt | git fast-import --export-marks=marks.txt`
